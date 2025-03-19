@@ -1,4 +1,4 @@
-###### Case Kovi ######
+###### Case Deep Dive e Propensão a churn para uma locadora de veiculos ficticia ######
 
 # import e dataframe
 import pandas as pd
