@@ -2,7 +2,7 @@
 
 # import e dataframe
 import pandas as pd
-df = pd.read_csv("C:\\Users\\Userv\\OneDrive\\Documentos\\Kovi\\query.csv")
+df = pd.read_csv("C:\\Users\\Userv\\OneDrive\\Documentos\\<CASE>\\query.csv")
 
 # Declarando variáveis
 driver_id = df['driver_id']
