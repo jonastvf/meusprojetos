@@ -101,13 +101,12 @@ from sklearn.metrics import classification_report
 # Etapa 2: Regressão Logística
 drivers_df['Status'] = drivers_df['Status'].apply(lambda x: 1 if x == 'Ativo' else 0)
 
-# Verifique os nomes das colunas para garantir que 'Kind_upgrade' e 'NroChanges' existem
+# Check nos nomes das colunas
 print(drivers_df.columns)
-
-# Certifique-se de que os nomes das colunas estão corretos (sensíveis a maiúsculas e minúsculas)
 X = drivers_df[['TotalAmount', 'AgeWeek', 'Kind_upgrade', 'LTV', 'NroChanges']]
 y = drivers_df['Status']
 
+#Treino e Teste
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 scaler = StandardScaler()
@@ -143,7 +142,7 @@ drivers_df = pd.merge(drivers_df, score_df, on='driver_id', how='left')
 drivers_df.to_csv("drivers_analysis_with_churn_score.csv", index=False)
 print("Resultados finais exportados para drivers_analysis_with_churn_score.csv")
 
-# Calcular as métricas do modelo
+# Cs métricas do modelo
 report = classification_report(y_test, y_pred)
 
 # Exibir as métricas do modelo
